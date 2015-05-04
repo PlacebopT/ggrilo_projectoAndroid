@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MillionaireApp</string>
+
+    <string name="action_settings">Definições</string>
+    <string name="newGame">Novo Jogo</string>
+    <string name="questionsActivity">Perguntas</string>
+
+</resources>
