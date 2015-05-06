@@ -17,9 +17,10 @@ public class MainActivity extends ActionBarActivity {
 
         findViewById(R.id.buttonNewGame).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 // Enviar para activity das perguntas
-                startActivity(new Intent(getApplicationContext(), //TemperatureIntentService.class// )););
+                startActivity(new Intent(getApplicationContext(),QuestionsActivity.class));
             }
         });
     }

@@ -4,5 +4,12 @@
     <string name="action_settings">Definições</string>
     <string name="newGame">Novo Jogo</string>
     <string name="questionsActivity">Perguntas</string>
+    <string name="answerA">A</string>
+    <string name="answerB">B</string>
+    <string name="answerC">C</string>
+    <string name="answerD">D</string>
+    <string name="askPublic">Public</string>
+    <string name="ask5050">50/50</string>
+    <string name="askPhone">Phone</string>
 
 </resources>

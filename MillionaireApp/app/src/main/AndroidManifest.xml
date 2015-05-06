@@ -20,6 +20,11 @@
             android:name=".QuestionsActivity"
             android:label="@string/questionsActivity" >
         </activity>
+
+        <service
+            android:name=".ContentIntentService"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>
