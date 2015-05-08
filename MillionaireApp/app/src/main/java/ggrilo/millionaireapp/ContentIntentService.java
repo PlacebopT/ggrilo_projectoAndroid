@@ -6,7 +6,9 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -38,12 +40,30 @@ public class ContentIntentService extends IntentService {
             while ((line = rd.readLine()) != null)
                 res += line;
 
-            JSONObject response = new JSONObject(res);
+            JSONArray response = new JSONArray(res);
 
+            for (int i = 0; i < response.length(); i++){
+                JSONObject obj = response.getJSONObject(i);
 
+                Question question = new Question(obj.getInt("id"), obj.getString("question"));
 
-            //double temp = response.getJSONObject("main").getDouble("temp");
+                JSONArray answers = obj.getJSONArray("answers");
 
+                for (int j = 0; j < answers.length(); j++){
+                    JSONObject objAnswer = answers.getJSONObject(j);
+
+                    Question.Answer answer = new Question.Answer(objAnswer.getString("id"),
+                                                                 objAnswer.getString("answer"),
+                                                                 objAnswer.getBoolean("correct"));
+
+                    question.addAnswer(answer);
+
+                    //Log.i("respostas", answer.toString());
+                }
+
+                Log.i("questões", question.toString());
+
+            }
 
         }
         catch(Exception e)
