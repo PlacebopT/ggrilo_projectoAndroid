@@ -20,8 +20,9 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v)
             {
                 // Enviar para activity das perguntas
+                startActivity(new Intent(getApplicationContext(),QuestionsActivity.class));
                 startService(new Intent(getApplicationContext(), ContentIntentService.class));
-                //startActivity(new Intent(getApplicationContext(),QuestionsActivity.class));
+
             }
         });
     }

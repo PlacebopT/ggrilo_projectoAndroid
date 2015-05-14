@@ -4,12 +4,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="ggrilo.millionaireapp.QuestionsActivity">
+    tools:context="pt.challenge_it.android.flag.millionaire.activity.GameActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
+        <!--
         <Button
             android:text="@string/askPublic"
             android:layout_width="wrap_content"
@@ -29,41 +32,47 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonAskPhone"
             android:layout_toRightOf="@id/buttonAsk5050"/>
+            -->
 
         <TextView
-            android:text="@string/questionsActivity"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtQuestion"
-            android:layout_below="@+id/buttonAskPhone"/>
+            android:gravity="center_horizontal"
+            android:id="@+id/txtQuestion"/>
 
         <Button
-            android:text="@string/answerA"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonAnswerA"
-            android:layout_below="@+id/txtQuestion"/>
+            android:id="@+id/buttonAnswerA"/>
 
         <Button
-            android:text="@string/answerB"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonAnswerB"
-            android:layout_below="@+id/buttonAnswerA"/>
+            android:id="@+id/buttonAnswerB"/>
 
         <Button
-            android:text="@string/answerC"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonAnswerC"
-            android:layout_below="@+id/buttonAnswerB"/>
+            android:id="@+id/buttonAnswerC"/>
 
         <Button
-            android:text="@string/answerD"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonAnswerD"
-            android:layout_below="@+id/buttonAnswerC"/>
-    </RelativeLayout>
+            android:id="@+id/buttonAnswerD"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtPrize"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtSafePrize"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
+
