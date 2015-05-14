@@ -61,24 +61,21 @@ public class GameActivity extends ActionBarActivity implements View.OnClickListe
             this.currentQuestionIndex++;
             changeToNextQuestion();
 
-            Question question = this.questions[this.currentQuestionIndex];
+            if (this.currentQuestionIndex < 15){
+                Question question = this.questions[this.currentQuestionIndex];
 
 
-            for (int i = 1; i<=question.getIdentifier()-1; i++)
-            {
-                if (question.getIdentifier()>i)
+                for (int i = 1; i<=question.getIdentifier()-1; i++)
                 {
-                    TextView txtPrize = (TextView)findViewById(R.id.txtPrize);
-                    txtPrize.setText("Acertou, está com " + String.valueOf(prizeLevel[i-1]) + " Euros!");
-
-                    TextView txtPrizeLevel = (TextView)findViewById(R.id.txtSafePrize);
-                    txtPrizeLevel.setText("Valor de segurança: " + String.valueOf(safePrizeLevel[i-1])+ " Euros!");
-
-                } /*else if (question.getIdentifier()==15)
+                    if (question.getIdentifier()>i)
                     {
-                        Toast.makeText(getApplicationContext(), "GANHOU " + String.valueOf(prizeLevel[14]) + " Euros!", Toast.LENGTH_LONG).show();
-                        finish();
-                    }*/
+                        TextView txtPrize = (TextView)findViewById(R.id.txtPrize);
+                        txtPrize.setText("Acertou, está com " + String.valueOf(prizeLevel[i-1]) + " Euros!");
+
+                        TextView txtPrizeLevel = (TextView)findViewById(R.id.txtSafePrize);
+                        txtPrizeLevel.setText("Valor de segurança: " + String.valueOf(safePrizeLevel[i-1])+ " Euros!");
+                    }
+                }
             }
         }else
             {
@@ -89,9 +86,10 @@ public class GameActivity extends ActionBarActivity implements View.OnClickListe
 
     private void changeToNextQuestion()
     {
-        if (this.currentQuestionIndex > 15){
+        if (this.currentQuestionIndex == 15){
             Toast.makeText(getApplicationContext(), "GANHOU " + String.valueOf(prizeLevel[14]) + " Euros!", Toast.LENGTH_LONG).show();
             finish();
+            return;
         }
 
         Question question = this.questions[this.currentQuestionIndex];
