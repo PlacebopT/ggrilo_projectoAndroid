@@ -90,7 +90,7 @@ public class GameActivity extends ActionBarActivity implements View.OnClickListe
                 {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over) + " Mas ganhaste " + String.valueOf(safePrizeLevel[5]) + " Euros!!!", Toast.LENGTH_LONG).show();
                     finish();
-                } else if (question.getIdentifier() > 10 && question.getIdentifier() < 15)
+                } else if (question.getIdentifier() > 10 && question.getIdentifier() < 15 || question.getIdentifier() == 15)
                 {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over) + " Mas ganhaste " + String.valueOf(safePrizeLevel[10]) + " Euros!!!", Toast.LENGTH_LONG).show();
                     finish();
