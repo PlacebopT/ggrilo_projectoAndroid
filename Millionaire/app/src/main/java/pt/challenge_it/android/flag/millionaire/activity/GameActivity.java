@@ -79,8 +79,22 @@ public class GameActivity extends ActionBarActivity implements View.OnClickListe
             }
         }else
             {
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over), Toast.LENGTH_LONG).show();
-                finish();
+                Question question = this.questions[this.currentQuestionIndex];
+
+                if (question.getIdentifier() < 5)
+                {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over) + " E ficaste com " + String.valueOf(safePrizeLevel[1]) + " Euros!!!", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+                else if (question.getIdentifier() > 4 && question.getIdentifier() < 10)
+                {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over) + " Mas ganhaste " + String.valueOf(safePrizeLevel[5]) + " Euros!!!", Toast.LENGTH_LONG).show();
+                    finish();
+                } else if (question.getIdentifier() > 10 && question.getIdentifier() < 15)
+                {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over) + " Mas ganhaste " + String.valueOf(safePrizeLevel[10]) + " Euros!!!", Toast.LENGTH_LONG).show();
+                    finish();
+                }
             }
     }
 
